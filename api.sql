@@ -11,7 +11,7 @@
  Target Server Version : 50552
  File Encoding         : utf-8
 
- Date: 08/30/2017 13:47:42 PM
+ Date: 08/30/2017 16:46:04 PM
 */
 
 SET NAMES utf8mb4;
@@ -47,7 +47,7 @@ CREATE TABLE `api_admin` (
 --  Records of `api_admin`
 -- ----------------------------
 BEGIN;
-INSERT INTO `api_admin` VALUES ('1', '58FF097F6118F', '1', 'admin', '90b08242cef71e31b925f1e8c9d1ea55', 'admin', null, '1', '13312345679', null, '/src/images/user.jpg', '', 'asdfasdf', '192.168.1.105', '1504071019', '3689dc8d751583479d0ec8f57b9f17bf', '', '1496969527');
+INSERT INTO `api_admin` VALUES ('1', '58FF097F6118F', '1', 'admin', '90b08242cef71e31b925f1e8c9d1ea55', 'admin', null, '0', '13312345679', null, '/src/images/user.jpg', '', '流水无痕', '192.168.1.105', '1504074941', 'c1eff5cbdd33679db6d7229a51acced3', '', '1504079611');
 COMMIT;
 
 -- ----------------------------
@@ -111,7 +111,6 @@ CREATE TABLE `api_app_version` (
 DROP TABLE IF EXISTS `api_menu`;
 CREATE TABLE `api_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `symbol` varchar(60) DEFAULT NULL,
   `icon` varchar(30) CHARACTER SET latin1 DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `parent_id` int(11) NOT NULL,
@@ -119,17 +118,16 @@ CREATE TABLE `api_menu` (
   `controller` varchar(255) DEFAULT NULL,
   `func` varchar(255) NOT NULL,
   `sort` int(11) NOT NULL,
-  `show` tinyint(1) NOT NULL,
   `menu_fast` tinyint(1) NOT NULL,
   `update_at` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Records of `api_menu`
 -- ----------------------------
 BEGIN;
-INSERT INTO `api_menu` VALUES ('1', null, 'home', '后台首页', '0', 'index', 'index', 'main', '0', '0', '0', '1495530800'), ('2', null, 'dashboard', '我的面板', '0', 'user', 'panel', 'default', '1', '0', '0', null), ('3', null, 'user', '个人信息', '2', 'user', 'index', 'profile', '0', '0', '0', '1495441680'), ('4', null, 'lock', '修改密码', '2', 'user', 'index', 'password', '1', '0', '0', null), ('5', null, 'file', '日志信息', '2', 'user', 'log', 'index', '2', '0', '0', null), ('6', null, 'users', '用户管理', '0', 'user', 'admin', 'default', '2', '0', '0', null), ('7', null, 'user-circle-o', '用户列表', '6', 'user', 'admin', 'index', '0', '0', '0', null), ('8', null, 'user-o', '角色列表', '6', 'user', 'role', 'index', '0', '0', '0', '1495441686'), ('9', null, 'cogs', '系统设置', '0', 'system', 'setting', 'default', '3', '0', '0', null), ('10', null, 'cog', '参数设置', '9', 'system', 'setting', 'index', '40', '0', '0', '1495441890'), ('11', null, 'connectdevelop', '接口管理', '9', 'system', 'api', 'index', '20', '0', '0', '1495441898'), ('12', null, 'list', '安全设置', '9', 'system', 'security', 'index', '30', '0', '0', '1495441894'), ('13', null, 'list', '菜单管理', '9', 'system', 'menu', 'index', '0', '0', '0', null), ('14', null, 'file-text-o', '系统日志', '9', 'system', 'log', 'index', '50', '0', '0', '1495441886');
+INSERT INTO `api_menu` VALUES ('1', 'home', '后台首页', '0', 'index', 'index', 'main', '0', '0', '1495530800'), ('2', 'dashboard', '我的面板', '0', 'user', 'panel', 'default', '1', '0', null), ('3', 'user', '个人信息', '2', 'user', 'index', 'profile', '0', '0', '1495441680'), ('4', 'lock', '修改密码', '2', 'user', 'index', 'password', '1', '0', null), ('5', 'file', '日志信息', '2', 'user', 'log', 'index', '2', '0', null), ('6', 'users', '用户管理', '0', 'user', 'admin', 'default', '2', '0', null), ('7', 'user-circle-o', '用户列表', '6', 'user', 'admin', 'index', '0', '0', null), ('8', 'user-o', '角色列表', '6', 'user', 'role', 'index', '0', '0', '1495441686'), ('9', 'cogs', '系统设置', '0', 'system', 'setting', 'default', '3', '0', null), ('13', 'list', '菜单管理', '9', 'system', 'menu', 'index', '0', '0', null), ('14', 'file-text-o', '系统日志', '9', 'system', 'log', 'index', '50', '0', '1495441886'), ('18', 'dot-circle-o', '权限节点', '9', 'system', 'node', 'index', '10', '0', null);
 COMMIT;
 
 -- ----------------------------

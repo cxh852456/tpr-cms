@@ -61,10 +61,10 @@ class Login extends AdminBase
             Session::set('user', $user);
 
             /*** 单点登录，记录token ***/
-            $expire = intval(Config::get('web.token', 172800));
-            Cache::set("admin_login_token" . $user['username'], $user['token'], $expire);
-
-            $this->success("操作成功", url('index/index/index'));
+//            $expire = intval(Config::get('web.token', 172800));
+//            Cache::set("admin_login_token" . $user['username'], $user['token'], $expire);
+//
+//            $this->success("操作成功", url('index/index/index'));
         }
         return $this->fetch('login');
     }

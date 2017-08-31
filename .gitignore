@@ -6,3 +6,5 @@ thinkphp
 test.html
 /public/uploads/
 phpunit.xml
+Test*
+test*

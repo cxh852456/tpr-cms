@@ -2,7 +2,7 @@
 <section class="layui-larry-box">
     <div class="larry-personal">
         <blockquote class="layui-elem-quote mylog-info-tit">
-            <ul class="layui-tab-title">
+            <ul class="layui-tab-title" style="border: 0">
                 <li><a id="addAdmin" class="layui-btn"><i class="layui-icon">&#xe654;</i>新增用户</a></li>
                 <li>
                     <div class="search-bar">
@@ -45,7 +45,8 @@
             var id = obj.data.id;
             if(obj.event === 'del'){
                 var url = "{:u('user','admin','delete')}?id=" + id;
-                postSomething(url,{})
+                postSomething(url,{});
+                return false;
             }else if(obj.event === 'edit'){
                 edit(id);
             }
